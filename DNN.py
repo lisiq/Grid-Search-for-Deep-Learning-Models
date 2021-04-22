@@ -42,7 +42,7 @@ X_train = scaler.fit_transform(X_train)
 X_val = scaler.transform(X_val)
 
 # Model
-def build_model(n_hidden=1, n_neurons=512, learning_rate=3e-3, input_shape=[len(cols)]):
+def build_model(n_hidden=1, n_neurons=512, learning_rate=3e-3, input_shape=[X_train.shape[1]):
     model = keras.models.Sequential()
     model.add(keras.layers.InputLayer(input_shape=input_shape))
     for layer in range(n_hidden):
